@@ -6,6 +6,10 @@ buildscript {
   ext.rxjava = "2.2.21"
   ext.rxandroid = "2.1.1"
   ext.rx_adapter = "2.3.0"
+  ext.retrofit = "2.9.0"
+  ext.moshi = "1.11.0"
+  ext.retrofit_moshi = "2.6.2"
+
   repositories {
     google()
     mavenCentral()
