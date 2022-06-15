@@ -1,4 +1,4 @@
-package com.lara.s.lopez.stock.presentation.viewModel
+package com.lara.s.lopez.stockapplication.presentation.viewModel
 
 import android.util.Log
 import androidx.lifecycle.LiveData

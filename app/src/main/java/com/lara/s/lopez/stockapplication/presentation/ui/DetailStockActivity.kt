@@ -1,11 +1,11 @@
-package com.lara.s.lopez.stock.presentation.ui
+package com.lara.s.lopez.stockapplication.presentation.ui
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.lara.s.lopez.stock.databinding.ActivityDetailStockBinding
-import com.lara.s.lopez.stock.presentation.viewModel.DetailViewModel
-import com.lara.s.lopez.stock.util.FormatNameViewUtil
+import com.lara.s.lopez.stockapplication.databinding.ActivityDetailStockBinding
+import com.lara.s.lopez.stockapplication.presentation.viewModel.DetailViewModel
+import com.lara.s.lopez.stockapplication.util.FormatNameViewUtil
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

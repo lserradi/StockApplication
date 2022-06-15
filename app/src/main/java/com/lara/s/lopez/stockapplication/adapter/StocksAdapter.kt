@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.lara.s.lopez.domain.model.Stock
-import com.lara.s.lopez.stock.util.OnItemClickListener
+import com.lara.s.lopez.stockapplication.util.OnItemClickListener
 import com.lara.s.lopez.stockapplication.R
 
 class StocksAdapter(private val stocks: List<Stock>) :

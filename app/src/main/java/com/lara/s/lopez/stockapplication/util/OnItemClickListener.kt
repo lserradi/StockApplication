@@ -1,4 +1,4 @@
-package com.lara.s.lopez.stock.util
+package com.lara.s.lopez.stockapplication.util
 
 interface OnItemClickListener {
 
