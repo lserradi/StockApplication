@@ -9,6 +9,7 @@ buildscript {
   ext.retrofit = "2.9.0"
   ext.moshi = "1.11.0"
   ext.retrofit_moshi = "2.6.2"
+  ext.view_model = "2.4.1"
 
   repositories {
     google()
