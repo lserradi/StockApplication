@@ -45,6 +45,11 @@ dependencies {
   implementation project(':domain')
   implementation project(':data')
 
+  //Retrofit Moshi
+  implementation "com.squareup.retrofit2:retrofit:$retrofit"
+  implementation "com.squareup.moshi:moshi-kotlin:$moshi"
+  implementation "com.squareup.retrofit2:converter-moshi:$retrofit_moshi"
+
   // Dagger Hilt
   implementation "com.google.dagger:hilt-android:$hilt_version"
   kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
