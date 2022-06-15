@@ -1,4 +1,4 @@
-package com.lara.s.lopez.stockapplication
+package com.lara.s.lopez.stockapplication.di
 
 import com.lara.s.lopez.core.Constant
 import com.lara.s.lopez.data.apiservice.StocksApiService

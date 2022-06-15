@@ -1,4 +1,4 @@
-package com.lara.s.lopez.stock.di
+package com.lara.s.lopez.stockapplication.di
 
 import com.lara.s.lopez.data.repository.StocksDataRepository
 import com.lara.s.lopez.domain.repository.StocksRepository
