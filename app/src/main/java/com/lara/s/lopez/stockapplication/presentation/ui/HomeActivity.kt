@@ -1,15 +1,16 @@
 package com.lara.s.lopez.stockapplication.presentation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.lara.s.lopez.stock.util.OnItemClickListener
 import com.lara.s.lopez.stockapplication.adapter.StocksAdapter
 import com.lara.s.lopez.stockapplication.databinding.ActivityMainBinding
 import com.lara.s.lopez.stockapplication.presentation.viewModel.HomeViewModel
+import com.lara.s.lopez.stockapplication.util.OnItemClickListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,7 +39,9 @@ class HomeActivity : AppCompatActivity() {
                 binding.recyclerView.adapter = adapter
                 adapter.setOnItemClickListener(object : OnItemClickListener {
                     override fun onItemClick(position: Int) {
-
+                        val intent = Intent(applicationContext, DetailStockActivity::class.java)
+                        intent.putExtra(ID_STOCK, listStock[position].id)
+                        startActivity(intent)
                     }
                 })
             }

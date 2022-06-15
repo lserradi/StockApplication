@@ -1,4 +1,4 @@
-package com.lara.s.lopez.stock.util
+package com.lara.s.lopez.stockapplication.util
 
 import com.lara.s.lopez.domain.model.CategoryType
 import javax.inject.Inject

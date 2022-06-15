@@ -1,7 +1,7 @@
 package com.lara.s.lopez.data.repository
 
-import com.lara.s.lopez.data.network.StocksDataSource
 import com.lara.s.lopez.data.cache.MemoryDataSource
+import com.lara.s.lopez.data.network.StocksDataSource
 import com.lara.s.lopez.domain.model.Stock
 import com.lara.s.lopez.domain.repository.StocksRepository
 import io.reactivex.Observable
@@ -28,6 +28,11 @@ class StocksDataRepository @Inject constructor(
 
 
     override fun getDetailStock(id: String): Single<Stock> {
-        TODO()
+        val stock = memoryDataSource.get()?.find { it.id == id }
+        return if (stock != null) {
+            Single.just(stock)
+        } else {
+            stocksDataSource.getDetailStocksApi(id)
+        }
     }
 }
