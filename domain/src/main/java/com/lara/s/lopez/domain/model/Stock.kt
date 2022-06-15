@@ -5,5 +5,5 @@ data class Stock(
     val name: String = "",
     val hot: Int = 0,
     val ricCode: Int,
-    val category: CategoryType
+    val category: CategoryType,
 )
