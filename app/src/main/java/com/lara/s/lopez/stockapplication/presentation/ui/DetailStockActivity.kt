@@ -5,7 +5,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.lara.s.lopez.stockapplication.databinding.ActivityDetailStockBinding
 import com.lara.s.lopez.stockapplication.presentation.viewModel.DetailViewModel
-import com.lara.s.lopez.stockapplication.util.FormatNameViewUtil
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,7 +13,6 @@ class DetailStockActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailStockBinding
     private val viewModel: DetailViewModel by viewModels()
     private var stockId: String = ""
-    private val formatNameUtil = FormatNameViewUtil()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,17 +22,14 @@ class DetailStockActivity : AppCompatActivity() {
 
         setUpObservers()
 
-        viewModel.stock.observe(this, { stock ->
-            if (stock != null) {
-                binding.nameStock.text =
-                    formatNameUtil.formatNameStock(stock.name, binding.nameStock.text.toString())
-                binding.hotStock.text = formatNameUtil.formatHotStock(stock.hot.toString(),
-                    binding.hotStock.text.toString())
-                binding.ricCode.text = formatNameUtil.formatRicCodeStock(stock.ricCode.toString(),
-                    binding.ricCode.text.toString())
-                binding.category.text = formatNameUtil.formatCategoryStock(stock.category,
-                    binding.category.text.toString())
-            }
+        viewModel.stock.observe(this, {
+            binding.nameStock.text = binding.nameStock.text.toString().plus(it.name)
+            binding.hotStock.text =
+                binding.hotStock.text.toString().plus(it.hot.toString())
+            binding.ricCode.text = binding.ricCode.text.toString().plus(it.ricCode.toString())
+        })
+        viewModel.category.observe(this, {
+            binding.category.text = binding.category.text.toString().plus(it)
         })
     }
 
