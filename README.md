@@ -36,5 +36,5 @@ width="34.9%"/>
 
 ## API
 
-StockApplication usa [NinetyNineAPI](https://challenge.ninetynine.com/favorites para construir una API RESTful.<br>
+StockApplication usa [NinetyNineAPI](https://challenge.ninetynine.com/favorites) para construir una API RESTful.<br>
 
