@@ -10,6 +10,7 @@ buildscript {
   ext.moshi = "1.11.0"
   ext.retrofit_moshi = "2.6.2"
   ext.view_model = "2.4.1"
+  ext.firebase = "2.9.0"
 
   repositories {
     google()
@@ -19,7 +20,8 @@ buildscript {
     classpath "com.android.tools.build:gradle:7.0.3"
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_gradle"
     classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
-
+    classpath "com.google.firebase:firebase-crashlytics-gradle:$firebase"
+    classpath 'com.google.gms:google-services:4.3.10'
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
   }

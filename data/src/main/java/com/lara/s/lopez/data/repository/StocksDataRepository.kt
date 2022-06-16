@@ -1,5 +1,6 @@
 package com.lara.s.lopez.data.repository
 
+import com.lara.s.lopez.core.logger.CoordinatorLogger
 import com.lara.s.lopez.data.cache.MemoryDataSource
 import com.lara.s.lopez.data.network.StocksDataSource
 import com.lara.s.lopez.domain.model.Stock
@@ -11,6 +12,7 @@ import javax.inject.Inject
 class StocksDataRepository @Inject constructor(
     private val stocksDataSource: StocksDataSource,
     private var memoryDataSource: MemoryDataSource,
+    private val logger: CoordinatorLogger,
 ) : StocksRepository {
 
 
@@ -22,10 +24,15 @@ class StocksDataRepository @Inject constructor(
                 .flatMapObservable { Observable.fromIterable(it.idList) }
                 .map { id -> stocksDataSource.getDetailStocksApi(id).blockingGet() }
                 .toList()
-                .doOnSuccess { memoryDataSource.save(it) }
+                .doOnSuccess {
+                    logger.debug(javaClass.name, "Get stocks from retrofit petition")
+                    memoryDataSource.save(it)
+                }
+                .doOnError {
+                    throw RuntimeException(it.message + "Error to get stocks")
+                }
         }
     }
-
 
     override fun getDetailStock(id: String): Single<Stock> {
         val stock = memoryDataSource.get()?.find { it.id == id }

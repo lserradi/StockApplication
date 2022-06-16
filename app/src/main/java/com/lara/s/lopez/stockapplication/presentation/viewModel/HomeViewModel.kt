@@ -1,8 +1,8 @@
 package com.lara.s.lopez.stockapplication.presentation.viewModel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.lara.s.lopez.core.logger.CoordinatorLogger
 import com.lara.s.lopez.domain.model.Stock
 import com.lara.s.lopez.domain.usecase.GetStocksUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,6 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val stocksUseCase: GetStocksUseCase,
+    private val logger: CoordinatorLogger,
 ) : BaseViewModel() {
 
     private val _progressBar = MutableLiveData<Boolean>()
@@ -35,8 +36,12 @@ class HomeViewModel @Inject constructor(
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribeBy(
-                    onError = { Log.e("ERROR", it.message.toString()) },
+                    onError = {
+                        logger.error(javaClass.name, "Error to get stocks")
+                        throw RuntimeException(it.message)
+                    },
                     onSuccess = { stocks ->
+                        logger.debug(javaClass.name, "Success get stocks")
                         _progressBar.value = true
                         getStocks.value = stocks
                         _progressBar.value = false
