@@ -1,7 +1,7 @@
 <h1 align="center">StockApplication</h1>
 <h2 align="center"> StockApplication cuenta con el desarrollo de un proyecto en Kotlin con Hilt, RXJava, Retrofit, ViewModel, basado en MVVM. </h2>
 <p align="center">
-<img src="/assets/detailStock.jpeg"/>
+<img src="/assets/image.jpeg"/>
 
 
 ## Acerca de StockApplication
@@ -24,7 +24,7 @@
 <p>
 <p>
 <p align="center">
-<img src="https://devexperto.com/wp-content/uploads/2018/10/clean-architecture-graph.png"
+<img src="https://devexperto.com/wp-content/uploads/2018/10/clean-architecture-own-layers.png"
 width="30.1%/>
 
 <p align="center">
@@ -33,6 +33,8 @@ width="34.9%"/>
 
 </p>
 
+
 ## API
 
 StockApplication usa [NinetyNineAPI](https://challenge.ninetynine.com/favorites) para construir para construir una API RESTful.<br>
+
