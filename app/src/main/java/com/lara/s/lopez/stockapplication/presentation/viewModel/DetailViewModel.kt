@@ -1,8 +1,8 @@
 package com.lara.s.lopez.stockapplication.presentation.viewModel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.lara.s.lopez.core.logger.CoordinatorLogger
 import com.lara.s.lopez.domain.model.Stock
 import com.lara.s.lopez.domain.usecase.GetStockByIdUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,6 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     private val getStockByIdUseCase: GetStockByIdUseCase,
+    private val logger: CoordinatorLogger,
 ) : BaseViewModel() {
 
     private val getStock = MutableLiveData<Stock>()
@@ -33,8 +34,12 @@ class DetailViewModel @Inject constructor(
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribeBy(
-                    onError = { Log.e("ERROR", it.message.toString()) },
+                    onError = {
+                        logger.error(javaClass.name, "Error to get stock")
+                        throw RuntimeException(it.message + "Error to get stock")
+                    },
                     onSuccess = { stock ->
+                        logger.debug(javaClass.name, "Success get stock")
                         getStock.value = stock
                     }
                 )

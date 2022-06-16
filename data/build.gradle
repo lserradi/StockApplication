@@ -3,6 +3,7 @@ plugins {
   id 'kotlin-android'
   id 'kotlin-kapt'
   id 'dagger.hilt.android.plugin'
+  id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -42,6 +43,10 @@ android {
 dependencies {
   implementation project(':domain')
   implementation project(':core')
+
+  // Crashlytics Firebase platform
+  implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.11'
+  implementation 'com.google.firebase:firebase-analytics-ktx:21.0.0'
 
   //Retrofit Moshi
   implementation "com.squareup.retrofit2:retrofit:$retrofit"

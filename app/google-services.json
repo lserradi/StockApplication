@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "125532209491",
+    "project_id": "stocks-19b63",
+    "storage_bucket": "stocks-19b63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125532209491:android:e75b291cf98863f30121a6",
+        "android_client_info": {
+          "package_name": "com.lara.s.lopez.stockapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125532209491-8e7q2cfre7bpgpol3r8pqvq3j2rgcuc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAbhwX_0NBoVRonLdYBelhjkF6Gzrsz9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125532209491-8e7q2cfre7bpgpol3r8pqvq3j2rgcuc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
