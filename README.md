@@ -1,7 +1,7 @@
 <h1 align="center">StockApplication</h1>
 <h2 align="center"> StockApplication cuenta con el desarrollo de un proyecto en Kotlin con Hilt, RXJava, Retrofit, ViewModel, basado en MVVM. </h2>
 <p align="center">
-<img src=/assets/detailStock.jpeg"/>
+<img src="/assets/detailStock.jpeg"/>
 
 
 ## Acerca de StockApplication
