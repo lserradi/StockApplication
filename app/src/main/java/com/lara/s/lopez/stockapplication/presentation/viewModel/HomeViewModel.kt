@@ -2,7 +2,6 @@ package com.lara.s.lopez.stockapplication.presentation.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.lara.s.lopez.core.logger.CoordinatorLogger
 import com.lara.s.lopez.domain.model.Stock
 import com.lara.s.lopez.domain.usecase.GetStocksUseCase
@@ -38,8 +37,6 @@ class HomeViewModel @Inject constructor(
                 .subscribeOn(Schedulers.io())
                 .subscribeBy(
                     onError = {
-                        FirebaseCrashlytics.getInstance().log("ERROR")
-                        FirebaseCrashlytics.getInstance().sendUnsentReports()
                         logger.error(javaClass.name, "Error to get stocks")
                         throw RuntimeException(it.message)
                     },
