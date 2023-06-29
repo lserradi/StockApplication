@@ -26,9 +26,8 @@ The project connects to NinetyNine's API to retrieve data and manipulate it.
 
 ### 1. The architecture
 
-Spring Boot is designed to work with a file organization or architecture based on [MVC](https://www.javatpoint.com/xamarin-model-view-viewmodel-pattern),
-but for this challenge I've preferred to go further by applying my own interpretation of the [CLEAN architecture proposed by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html),
-which tries to take the best ideas from MVC, Hexagonal and Onion architectures.
+For this project I have preferred my interpretation of the [CLEAN architecture proposed by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html),
+using the [MVVM](https://www.javatpoint.com/xamarin-model-view-viewmodel-pattern) pattern.
 
 The most common image to represent the layers that define this architecture is usually:
 
