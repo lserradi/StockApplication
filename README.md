@@ -1,40 +1,45 @@
 <h1 align="center">StockApplication</h1>
-<h2 align="center"> StockApplication cuenta con el desarrollo de un proyecto en Kotlin con Hilt, RXJava, Retrofit, ViewModel, basado en MVVM. </h2>
-<p align="center">
-<img src="/assets/image.jpg" width="800" height="700"/>
+This project aims to be an example of an app that uses clean architecture together with the use of the MVVM pattern in the presentation layer.
+In this project we also control the asynchrony using RXJava as well as controlling the Hilt dependency injection.
+The functionality of the application is to collect stock data provided by the API, list them and get their details.
+
+The project connects to NinetyNine's API to retrieve data and manipulate it.
 
 
-## Acerca de StockApplication
-- Minimum SDK level 23
-- [Kotlin](https://kotlinlang.org/) 
-- Patrón & Arquitectura:
-  - Clean Arquitecture (Presentation - Data - Domain)
-  - MVVM (View - DataBinding - ViewModel - Model)
-- [RxJava](https://github.com/ReactiveX/RxJava) para resolver la asincronía.
-- [Hilt](https://dagger.dev/hilt/) para la inyección de dependencias.
-- Lifecycle - Observa los ciclos de vida de Android y maneja los estados de la UI al cambiar el ciclo de vida.
-- ViewModel - Almacena y administra los datos relacionados con la UIpara los ciclos de vida, permite que se conserven los datos.
- - DataBinding -Permite vincular los componentes de la UI de los diseños a las fuentes de datos de la app usando un formato declarativo.
-- [Retrofit2](https://github.com/square/retrofit) - Peticiones API REST.
-- [Moshi](https://github.com/square/moshi/) -  Librería JSON para Android, Java y Kotlin. Facilita el análisis de JSON en clases Java y Kotlin:
+## Stack
+
+|                   | Name                                | Version |
+|-------------------|-------------------------------------|---------|
+| **Language**      | Kotlin                              | 1.5.31  |
+| **Build**         | Gradle                              | 7.0.3   |
+| **SDK**           | Minimum SDK                         | 23      |
+| **View model**    | View model                          | 2.4.1   |
+| **Asynchrony**    | RxJava                              | 2.2.21  |
+| **JSON**          | Moshi                               | 1.11.0  |
+| **API REST**      | Retrofit2                           | 2.9.0   |
+| **Firebase**      | Firebase                            | 2.9.0   |
+| **Injection of Dependencies**| Hilt                     | 2.40.0  |
+| **API**           | [NinetyNineAPI](https://challenge.ninetynine.com/favorites)                           | 1.0.0   |
 
 
-## Arquitectura
-<h3>StockApplication sigue los principios de Clean Aquitecture y utiliza como patrón MVVM.
-<p>
-<p>
-<p align="center">
-<img src="https://devexperto.com/wp-content/uploads/2018/10/clean-architecture-own-layers.png"
-width="30.1%/>
+## Core decisions
 
-<p align="center">
-<img src="https://betabeers.com/static/uploads/blog/20190208_image_2.png"
-width="34.9%"/>
+### 1. The architecture
 
-</p>
+For this project I have preferred my interpretation of the [CLEAN architecture proposed by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html),
+using the [MVVM](https://www.javatpoint.com/xamarin-model-view-viewmodel-pattern) pattern.
 
+The most common image to represent the layers that define this architecture is usually:
 
-## API
+<img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg" width="600" />
 
-StockApplication usa [NinetyNineAPI](https://challenge.ninetynine.com/favorites) para construir una API RESTful.<br>
+But here is my own sketch of this project organization:
+
+<img src="https://i.postimg.cc/6qPKywkZ/Untitled-2023-04-20-1357.png" />
+
+The main benefits of using an architecture like this is the semantics it brings to the team, allowing to be clear where
+everything is going to be found. In addition to simplifying the task of testing by allowing to isolate each layer.
+
+In addition to the file organization proposed above, [SOLID principles](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) have been taken into account and other design
+patterns have been applied based on the need to.
 
